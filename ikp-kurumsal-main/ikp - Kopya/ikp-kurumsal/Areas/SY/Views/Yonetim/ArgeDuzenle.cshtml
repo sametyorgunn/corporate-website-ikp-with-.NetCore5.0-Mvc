@@ -1,0 +1,186 @@
+﻿@using EntityLayer.Concrete
+@model Arge
+
+@{
+    ViewData["Title"] = "ArgeDuzenle";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half" lang="tr">
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header page-header-left-inline-breadcrumb">
+                   
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li><span>Home</span></li>
+
+                            <li><span>eCommerce</span></li>
+
+                            <li><span>Categories</span></li>
+                        </ol>
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <!-- start: page -->
+                <form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+
+                    <div class="row">
+                        <div class="col">
+                            <section class="card card-modern card-big-info">
+                                <div class="card-body">
+                                    <div class="row">
+                                        
+                                        <div>
+                                            <div hidden class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0"></label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor1" type="text" class="form-control form-control-modern" name="Arge_Id" required></textarea>
+                                                </div>
+                                            </div>
+                                             <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    @Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id="SinifSelectBox"} )
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge Başlık</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor2" type="text" class="form-control form-control-modern" name="Arge_Baslik" required ></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge İçerik</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor3" type="text" class="form-control form-control-modern" name="Arge_Icerik" required ></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge Biz Kimiz</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor4" type="text" class="form-control form-control-modern" name="Arge_Biz_kimiz" required ></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge Vizyonumuz</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor5" type="text" class="form-control form-control-modern" name="Arge_vizyonumuz" required ></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge Misyonumuz</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor6" type="text" class="form-control form-control-modern" name="Arge_Misyonumuz" required ></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge Tarihçemiz Başlık</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor7" type="text" class="form-control form-control-modern" name="Arge_Tarihcemiz_Baslik" required ></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Arge Tarihçemiz İçerik</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor8" type="text" class="form-control form-control-modern" name="Arge_Tarihcemiz_icerik" required></textarea>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row pb-4">
+                                                <label class="col-lg-3 control-label text-lg-end pt-2">Arge Resim</label>
+                                                <div class="col-lg-6">
+                                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                        <div class="input-append">
+                                                            <div class="uneditable-input">
+                                                                <i class="fas fa-file fileupload-exists"></i>
+                                                                <span class="fileupload-preview"></span>
+                                                            </div>
+                                                            <span class="btn btn-default btn-file">
+
+                                                                <span class="fileupload-new">Select file</span>
+                                                                <input type="file" name="Arge_Resim" required />
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row pb-4">
+                                                <label class="col-lg-3 control-label text-lg-end pt-2">Arge Tarihçemiz Resim</label>
+                                                <div class="col-lg-6">
+                                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                        <div class="input-append">
+                                                            <div class="uneditable-input">
+                                                                <i class="fas fa-file fileupload-exists"></i>
+                                                                <span class="fileupload-preview"></span>
+                                                            </div>
+                                                            <span class="btn btn-default btn-file">
+
+                                                                <span class="fileupload-new">Select file</span>
+                                                                <input type="file" name="Arge_Tarihcemiz_Resim" required />
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row action-buttons">
+                        <div class="col-12 col-md-auto">
+                            <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                                <i class="bx bx-save text-4 me-2"></i> Kaydet
+                            </button>
+                        </div>
+                       
+                    </div>
+                    <script>
+                        CKEDITOR.config.autoParagraph = false;
+                        CKEDITOR.replace('editor1');
+                        CKEDITOR.replace('editor2');
+                        CKEDITOR.replace('editor3');
+                        CKEDITOR.replace('editor4');
+                        CKEDITOR.replace('editor5');
+                        CKEDITOR.replace('editor6');
+                        CKEDITOR.replace('editor7');
+                        CKEDITOR.replace('editor8');
+
+                        CKEDITOR.instances['editor1'].setData("@Model.Arge_Id");
+                        CKEDITOR.instances['editor2'].setData("@Html.Raw(@Model.Arge_Baslik)");
+                        CKEDITOR.instances['editor3'].setData("@Html.Raw(@Model.Arge_Icerik)");
+                        CKEDITOR.instances['editor4'].setData("@Html.Raw(@Model.Arge_Biz_kimiz)");
+                        CKEDITOR.instances['editor5'].setData("@Html.Raw(@Model.Arge_vizyonumuz)");
+                        CKEDITOR.instances['editor6'].setData("@Html.Raw(@Model.Arge_Misyonumuz)");
+                        CKEDITOR.instances['editor7'].setData("@Html.Raw(@Model.Arge_Tarihcemiz_Baslik)");
+                        CKEDITOR.instances['editor8'].setData("@Html.Raw(@Model.Arge_Tarihcemiz_icerik)");
+
+                    </script>
+                </form>
+                <!-- end: page -->
+            </section>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+

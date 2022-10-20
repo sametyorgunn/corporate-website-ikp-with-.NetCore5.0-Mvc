@@ -1,0 +1,64 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+@{
+    ViewData["Title"] = "BlogKategoriDetay";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+<div role="main" class="main" style="background-color:#fff">
+    <section class="section border-0 m-0 pb-3">
+        <div class="container container">
+
+            <div class="row mt-5 pt-3">
+                <div class="col-md-9">
+                    <div class="blog-posts">
+                        @foreach (var item in Model)
+                        {
+                            <article class="post post-large">
+                                <div class="post-image">
+                                    <a href="/Home/BlogDetay/@item.Blog_id">
+                                        <img src="~/Resimler/Bloglar/@item.Blog_resim_yol" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="How to Make Friends as a Grown-Up" style="width:100%;height:40%" />
+                                    </a>
+                                </div>
+
+                                <div class="post-date text-1">
+                                    <span class="day border-radius-0 text-4 text-dark">12</span>
+                                    <span class="month border-radius-0 text-1 bg-color-dark">Jan</span>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-6 line-height-3 mb-3"><a href="/Home/BlogDetay/@item.Blog_id" class="text-color-dark text-color-hover-primary">@Html.Raw(@item.Blog_baslik)</a></h2>
+                                    <p>@Html.Raw(@item.Blog_icerik.Substring(0, item.Blog_icerik.Substring(0, 100).LastIndexOf(" "))) ...</p>
+
+                                    <div class="post-meta">
+                                        @*<span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">Lifestyle</a>, <a href="#">Travel</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>*@
+                                        <span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="/Home/BlogDetay/@item.Blog_id" class="btn btn-xs btn-light text-1 text-uppercase">Devamını Oku</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        }
+
+
+                        <ul class="pagination float-end">
+                            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                   @await Component.InvokeAsync("SosyalMedyaPaylasim")
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+

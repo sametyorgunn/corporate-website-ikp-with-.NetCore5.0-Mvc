@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<AnaSayfaKisim4>
+
+<div class="row pt-4 mt-5">
+    <div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter">
+        <h2 class="font-weight-normal text-6"><strong class="font-weight-extra-bold">@Html.Raw(@ViewBag.baslik)</strong></h2>
+    </div>
+</div>
+<div class="row pb-4 mb-5">
+    
+    <div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+        <div class="owl-carousel owl-theme mb-0" data-plugin-options="{'items': 4, 'margin': 0, 'loop': false}">
+            
+
+            @foreach (var a in Model)
+            {
+                <div>
+                    <a href="~/Front/Index/CozumlerIcerik">
+                        <img src="~/Resimler/AnaSayfaResim/@a.AnaSayfaResim4Yol" style="padding-left:25px; width:350px; height:200px" class="img-fluid" alt="">
+                    </a>
+                </div>
+            }
+
+            </div>     
+    </div>
+    
+</div>
+

@@ -1,0 +1,226 @@
+﻿@model EntityLayer.Concrete.KMenu
+@{
+    ViewData["Title"] = "KullaniciKlavuzuIcerikEkle";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<head>
+      <!-- Vendor CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/vendor/animate/animate.compat.css">
+    <link rel="stylesheet" href="~/StaticFiles/vendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/vendor/magnific-popup/magnific-popup.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/theme.css">
+    <link rel="stylesheet" href="~/StaticFiles/css/theme-elements.css">
+    <link rel="stylesheet" href="~/StaticFiles/css/theme-blog.css">
+    <link rel="stylesheet" href="~/StaticFiles/css/theme-shop.css">
+
+    <!-- Skin CSS -->
+    <link id="skinCSS" rel="stylesheet" href="~/StaticFiles/css/skins/default.css">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/custom.css">
+
+    <!-- Head Libs -->
+    <script src="~/StaticFiles/vendor/modernizr/modernizr.min.js"></script>
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+    <link href="~/StaticFiles/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header page-header-left-inline-breadcrumb">
+
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li><span>Home</span></li>
+
+                            <li><span>eCommerce</span></li>
+
+                            <li><span>Categories</span></li>
+                        </ol>
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <div class="body">
+                    <div role="main" class="main">
+                        <div class="container py-4">
+                            <div class="row">
+                               <div class="col-lg-3 order-2 order-lg-1 mt-4 mt-lg-0">
+                                        <aside class="sidebar">                         
+                                        @await Component.InvokeAsync("KullaniciKlavuzuMenuListesi")
+                                        </aside>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- start: page -->
+                <form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+                    <div class="gizgos">
+                        <div class="row">
+                            <div class="col">
+                                <section class="card card-modern card-big-info">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div>
+                                                @* @Html.Label("Menü seçiniz")
+                                                @Html.DropDownListFor(x => x.KMenuId,(List<SelectListItem>)ViewBag.Kmenus, new { @class = "form-control"} )
+                                                *@
+                                                <br />
+                                                <div hidden class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Başlık</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" id="menuid" name="KmenuId" />
+                                                    </div>
+                                                </div>
+                                                 <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                       @Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id="SinifSelectBox"} )
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Başlık</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <textarea id="editor1" type="text" class="form-control form-control-modern" rows="4" name="Baslik" value="" required>
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">İçerik</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <textarea id="editor2" type="text" class="form-control form-control-modern" rows="4" name="Icerik" value="" required>
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row pb-4">
+                                                    <label class="col-lg-3 control-label text-lg-end pt-2"> Resim</label>
+                                                    <div class="col-lg-6">
+                                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                            <div class="input-append">
+                                                                <div class="uneditable-input">
+                                                                    <i class="fas fa-file fileupload-exists"></i>
+                                                                    <span class="fileupload-preview"></span>
+                                                                </div>
+                                                                <span class="btn btn-default btn-file">
+
+                                                                    <span class="fileupload-new">Select file</span>
+                                                                    <input type="file" name="Resim" />
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row action-buttons">
+                            <div class="col-12 col-md-auto">
+                                <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                                    <i class="bx bx-save text-4 me-2"></i> Kaydet
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+                    <script>
+
+                        CKEDITOR.replace("editor1");
+                        CKEDITOR.replace("editor2");
+                        CKEDITOR.config.autoParagraph = false;
+
+                        //$(document).ready(function() {
+                        //    $("#hideshow").click(function() {
+                        //        $(".gizgos").slideToggle("slow")
+                        //    });
+
+                        //});
+
+                        $(".menu").click(function() {
+                            let id = $(this).attr("value")
+                            $("#menuid").val(id)
+
+                        });
+                        $(".menu").click(function() {
+                            $(this).parent().parent().find("ul").toggle()
+                            // document.getElementById(this).style.visibility = "visible";
+
+                        });
+
+                    </script>
+                </form>
+                <!-- end: page -->
+            </section>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+@*
+@{
+    void RenderName(int? parentId)
+    {
+        string visible = "";
+        if (parentId != null)
+        {
+            visible = "display:none;";
+        }
+        //else if(parentId !=0 && parentId !=null)
+        //{
+        //    visible = "display:visible;";
+        //}
+        <ul class="nav nav-list flex-column ml-3 " style="@visible">
+
+            @foreach (var item in @Model.Where(x => x.KUstMenuId == parentId).ToList())
+            {
+
+                <li class="nav-item"><a class="nav-link active menuu" value="@item.Id">@item.MenuName</a></li>
+                if (Model.Where(x => x.KUstMenuId == item.Id).Count() > 0)
+                {
+                    RenderName(item.Id);
+                }
+            }
+
+        </ul>
+
+    }
+}
+*@
+
+
+
+
+
+
+
+
+
+
+

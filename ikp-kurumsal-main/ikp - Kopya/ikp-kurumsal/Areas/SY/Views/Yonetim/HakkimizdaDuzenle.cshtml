@@ -1,0 +1,182 @@
+﻿@using EntityLayer.Concrete
+@model Hakkimizda
+@{
+    ViewData["Title"] = "HakkimizdaDuzenle";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+
+<div class="inner-wrapper">
+    <!-- start: sidebar -->
+    <!-- end: sidebar -->
+    <section role="main" class="content-body content-body-modern mt-0">
+        <header class="page-header page-header-left-inline-breadcrumb">
+  
+            <div class="right-wrapper">
+                <ol class="breadcrumbs">
+                    <li><span>Home</span></li>
+
+                    <li><span>eCommerce</span></li>
+
+                    <li><span>Categories</span></li>
+                </ol>
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </header>
+      
+        <!-- start: page -->
+        <form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+
+            <div class="row">
+                <div class="col">
+                    <section class="card card-modern card-big-info">
+                        <div class="card-body">
+                            <div class="row">
+                                
+                                <div>
+                                     <div hidden class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0"> id</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea hidden id="editor1" type="text" class="form-control form-control-modern" name="Hkkimizda_id"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                           @Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id="SinifSelectBox"} )
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Ana Başlık</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor2" type="text" class="form-control form-control-modern" name="Hakkimizda_Baslik" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">içerik</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor3" class="form-control form-control-modern" name="Hakkimizda_icerik"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt başlık </label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor4" class="form-control form-control-modern" name="Hakkimizda_alt_baslik_bir" rows="2"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Misyonumuz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor5" class="form-control form-control-modern" name="Hakkimizda_Misyonumuz_icerik" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt başlık orta</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor6" class="form-control form-control-modern" name="Hakkimizda_altbaslik_orta" rows="2"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end pt-2 mt-1 mb-0">vizyonumuz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor7" class="form-control form-control-modern" name="Hakkimizda_Vizyon_icerik" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt başlık sağ</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor8" class="form-control form-control-modern" name="Hakkimizda_altbaslik_sag" rows="2"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end pt-2 mt-1 mb-0">neden biz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor9" class="form-control form-control-modern" name="Hakkimizda_Neden_Biz_icerik" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt başlık biz kimiz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor10" class="form-control form-control-modern" name="Hakkimizda_Bizkimiz_baslik" rows="2"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end pt-2 mt-1 mb-0">biz kimiz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor11" class="form-control form-control-modern" name="Hakkimizda_Biz_Kimiz_icerik" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row align-items-center mb-3">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt başlık ekibimiz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor12" class="form-control form-control-modern" name="Hakkimizda_Ekibimiz_Baslik" rows="2"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-5 col-xl-3 control-label text-lg-end pt-2 mt-1 mb-0">ekibimiz</label>
+                                        <div class="col-lg-7 col-xl-6">
+                                            <textarea id="editor13" class="form-control form-control-modern" name="Hakkimizda_Ekibimiz_icerik" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                     <label for="formFileMultiple" class="form-label">Biz kimiz resimler</label>
+                                    <input class="form-control" name="Biz_kimiz_resim" type="file" id="formFileMultiple" multiple required />
+                                    <br />
+                                    <label for="formFileMultiple" class="form-label">ekibimiz resimler</label>
+                                    <input class="form-control" name="Hakkimizda_Ekibimiz_Resim" type="file" id="formFileMultiple" multiple required/>
+
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row action-buttons">
+                <div class="col-12 col-md-auto">
+                    <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                        <i class="bx bx-save text-4 me-2"></i> Kaydet
+                    </button>
+                </div>
+
+            </div>
+
+            <script>
+                CKEDITOR.replace('editor1');
+                CKEDITOR.replace('editor2');
+                CKEDITOR.replace('editor3');
+                CKEDITOR.replace('editor4');
+                CKEDITOR.replace('editor5');
+                CKEDITOR.replace('editor6');
+                CKEDITOR.replace('editor7');
+                CKEDITOR.replace('editor8');
+                CKEDITOR.replace('editor9');
+                CKEDITOR.replace('editor10');
+                CKEDITOR.replace('editor11');
+                CKEDITOR.replace('editor12');
+                CKEDITOR.replace('editor13');
+                CKEDITOR.instances['editor1'].setData("@Model.Hkkimizda_id");
+                CKEDITOR.instances['editor2'].setData("@Html.Raw(@Model.Hakkimizda_Baslik)");
+                CKEDITOR.instances['editor3'].setData("@Html.Raw(@Model.Hakkimizda_icerik)");
+                CKEDITOR.instances['editor4'].setData("@Html.Raw(@Model.Hakkimizda_alt_baslik_bir)");
+                CKEDITOR.instances['editor5'].setData("@Html.Raw(@Model.Hakkimizda_Misyonumuz_icerik)");
+                CKEDITOR.instances['editor6'].setData("@Html.Raw(@Model.Hakkimizda_altbaslik_orta)");
+                CKEDITOR.instances['editor7'].setData("@Html.Raw(@Model.Hakkimizda_Vizyon_icerik)");
+                CKEDITOR.instances['editor8'].setData("@Html.Raw(@Model.Hakkimizda_altbaslik_sag)");
+                CKEDITOR.instances['editor9'].setData("@Html.Raw(@Model.Hakkimizda_Neden_Biz_icerik)");
+                CKEDITOR.instances['editor10'].setData("@Html.Raw(@Model.Hakkimizda_Bizkimiz_baslik)");
+                CKEDITOR.instances['editor11'].setData("@Html.Raw(@Model.Hakkimizda_Biz_Kimiz_icerik)");
+                CKEDITOR.instances['editor12'].setData("@Html.Raw(@Model.Hakkimizda_Ekibimiz_Baslik)");
+                CKEDITOR.instances['editor13'].setData("@Html.Raw(@Model.Hakkimizda_Ekibimiz_icerik)");
+                CKEDITOR.config.autoParagraph = false;
+            
+            </script>
+        </form>
+    </section>
+</div>

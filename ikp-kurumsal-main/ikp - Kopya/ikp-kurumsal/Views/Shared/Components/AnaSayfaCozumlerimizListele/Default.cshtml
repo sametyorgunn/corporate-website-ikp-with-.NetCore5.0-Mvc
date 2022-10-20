@@ -1,0 +1,34 @@
+﻿@using EntityLayer.Concrete
+@model List<AnaSayfaKisim2>
+
+<div class="col-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
+    <h2 class="font-weight-bold line-height-1 text-7 negative-ls-1 mb-3">@Html.Raw(@ViewBag.baslik)</h2>
+    <p class="text-color-light opacity-8 text-4 mb-4">@Html.Raw(@ViewBag.description)</p>
+    <p class="text-color-light opacity-8 mb-4">
+        @Html.Raw(@ViewBag.description2)
+    </p>
+    <a href="/Home/CozumlerIcerik/" class="btn btn-dark font-weight-semibold btn-px-5 btn-py-2 text-2 rounded-0">Daha Fazlası</a>
+</div>
+<div class="col-lg-7 mt-5 mt-lg-0">
+    <div class="row">
+        @foreach (var a in Model)
+        {
+            <div class="col-md-6 appear-animation mt-4" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+                <div class="feature-box feature-box-style-2">
+
+                    <div class="feature-box-icon">
+                        <i class="icon-user-following icons text-color-light"></i>
+                    </div>
+                    <div class="feature-box-info">
+                        <h4 class="font-weight-bold text-color-light mb-2">@Html.Raw(@a.AnaSayfaAltBaslik2)</h4>
+                        <p class="text-color-light opacity-8 mb-0">
+                            @Html.Raw(@a.AnaSayfaAltDescription2)
+                        </p>
+                        <a style="color:white;" href="@Html.Raw(@a.AnaSayfaAltUrl2)">Devamını Oku</a>
+                    </div>
+                    
+                </div>
+            </div>
+        }
+        </div>
+</div>

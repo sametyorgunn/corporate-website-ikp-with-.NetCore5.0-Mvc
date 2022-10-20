@@ -1,0 +1,81 @@
+﻿@model EntityLayer.Concrete.Kariyer
+@{
+    ViewData["Title"] = "KariyerDetay";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Me | Porto - Responsive HTML5 Template</title>
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/animate/animate.compat.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme-elements.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme-blog.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme-shop.css">
+    <link id="skinCSS" rel="stylesheet" href="~/StaticFiles/Front/css/skins/default.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/custom.css">
+    <script src="~/StaticFiles/Front/vendor/modernizr/modernizr.min.js"></script>
+</head>
+<body data-plugin-page-transition>
+    <div class="body">
+        <div role="main" class="main">
+            <div class="container pt-5">
+                <div class="row py-4 mb-2">
+                    <div class="col-md-7 order-2">
+                        <div class="overflow-hidden">
+                            <h2 class="text-color-dark font-weight-bold text-12 mb-2 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">@Html.Raw(@Model.Kariyer_Konu_baslik)</h2>
+                        </div>
+                        <div class="overflow-hidden mb-3">
+                        </div>
+                        <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">@Html.Raw(@Model.kariyer_konu_icerik)</p>
+                        <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+                        <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+                            @*<div class="col-lg-6">
+                                    <a href="#" class="btn btn-modern btn-dark mt-3">Get In Touch</a>
+                                </div>*@
+                        </div>
+                    </div>
+                    <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter">
+                        <img src="~/Resimler/KariyerResim/@Model.Kariyer_resim_yol" class="img-fluid mb-2" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/StaticFiles/Front/vendor/jquery/jquery.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.appear/jquery.appear.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.validation/jquery.validate.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/lazysizes/lazysizes.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/isotope/jquery.isotope.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/vide/jquery.vide.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/vivus/vivus.min.js"></script>
+    <script src="~/StaticFiles/Front/js/theme.js"></script>
+    <script src="~/StaticFiles/Front/js/custom.js"></script>
+    <script src="~/StaticFiles/Front/js/theme.init.js"></script>
+
+</body>
+</html>

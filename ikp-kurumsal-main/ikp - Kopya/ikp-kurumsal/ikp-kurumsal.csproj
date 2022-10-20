@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ikp_kurumsal</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <Compile Remove="wwwroot\StaticFiles\Front\vendor\simple-line-icons\**" />
+    <Compile Remove="wwwroot\StaticFiles\General\vendor\simple-line-icons\**" />
+    <Content Remove="Resources\**" />
+    <Content Remove="wwwroot\StaticFiles\Front\vendor\simple-line-icons\**" />
+    <Content Remove="wwwroot\StaticFiles\General\vendor\simple-line-icons\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <EmbeddedResource Remove="wwwroot\StaticFiles\Front\vendor\simple-line-icons\**" />
+    <EmbeddedResource Remove="wwwroot\StaticFiles\General\vendor\simple-line-icons\**" />
+    <None Remove="Resources\**" />
+    <None Remove="wwwroot\StaticFiles\Front\vendor\simple-line-icons\**" />
+    <None Remove="wwwroot\StaticFiles\General\vendor\simple-line-icons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Components\AnaSayfaSliderListele\Default.cshtml" />
+    <None Include="Views\Shared\Components\AnaSayfaPortfolyoListele\Default.cshtml" />
+    <None Include="Views\Shared\Components\AnaSayfaMusterilerimizListele\Default.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="MySql.Data" Version="8.0.30" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\SY\Data\" />
+    <Folder Include="Areas\Uye\Data\" />
+    <Folder Include="wwwroot\Resimler\BizKimiz\" />
+    <Folder Include="wwwroot\Resimler\BlogKategori\" />
+    <Folder Include="wwwroot\Resimler\KlavuzIcerik\" />
+    <Folder Include="wwwroot\Resimler\Slider\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+  </ItemGroup>
+
+</Project>
